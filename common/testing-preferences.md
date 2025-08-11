@@ -33,8 +33,12 @@ In tests/unit folder.
 Start names with prefix "UT-".
 Add the id and the name of the component being tested (according to the TDD in 'docs/5.3_tech_design.md') and then testId - a unique number of the test for this service (replace dot with underscore for file names!!!). When adding a new test, always check for existing tests and increment <testID> to ensure it is unique. Then add the name of the test.
 
+When you create a test for an internal component not listed in the TDD (e.g. a React hook or a python class), add its name to the test name and the file name.
 Example: 
 - `UT_B1.CallService_01 Create call with valid data` - unit test for creating call with valid data. Must be placed in `tests/unit/UT_B1_CallService.py` file (note the dot between the test name and the test ID is replaced with underscore for file names!!!) among other unit tests of the Call Service.
+- `UT_F1.7_CalendarView_useCalendar_01 Calendar hook initialization with authentication` - unit test for calendar hook initialization with authentication. Must be placed in `tests/unit/UT_F1_7_CalendarView_useCalendar.tsx` file (note the dot between the test name and the test ID is replaced with underscore for file names!!!) among other unit tests of the useCalendar hook.
+
+Group all unit tests of the same component in one file file.
 
 **API and integration tests:**
 In tests/integration folder.
@@ -44,6 +48,8 @@ Add the id and name of the initiatinng component and the interaction ID being te
 Example: 
 - `API_F1.AuthLoginForm_I1 Submit login form with valid data` - API integration test for submitting login form with valid data - interaction `I1`,  Must be placed in `tests/integration/API_F1_AuthLoginForm_I1.py` file (note the replacement of the dot with underscore for file name!!!) - one file per interaction being tested.
 - `INT_B2.CallService_I2 Create call with valid data` - integration test for creating call in DB - interaction `I2`, Must be placed in `tests/integration/INT_B2_CallService_I2.py` file - one file per interaction being tested. In one file all tests for this interaction must be placed.
+
+Group all integration tests of the same interaction in one file.
 
 **End-to-end tests:**
 In tests/e2e folder.
@@ -55,6 +61,7 @@ Example:
 - `E2E_F5.Chat Download  messages history in chat` - end-to-end test for downloading messages history in chat,  Must be placed in `frontend/e2e/E2E_F5_Chat.py` file (note the replacement of the dot with underscore for file name!!!). All e2e tests for user interaction with this F5.Chat component must be placed in this file.
 
 No need to prepend "test_" for `pytest` tests - pitest.ini file allows to discover tests without it.
+
 </TEST_NAMING_CONVENTIONS>
 
 <TEMPORARY_DATA_LOCATION>

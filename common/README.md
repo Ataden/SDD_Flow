@@ -10,7 +10,7 @@ Helper prompt to extract Phase and Step numbers from #ARGUMENTS.
 
 Helper prompt to instruct the agent to check if the services are running.
 
-## testing_preferences.md
+## testing-preferences.md
 
 Preferences and conventions for the testing process.
 

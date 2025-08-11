@@ -1,6 +1,6 @@
 # SDD Flow - AI Coding Assistant Framework
 
-A structured **Spec-Driven Development (SDD)** methodology and toolkit for building applications with AI coding assistants. 
+A structured **Spec-Driven Development (SDD)** methodology and toolkit for building applications with AI coding agents. 
 
 Based on a proposition **SPECS ARE THE NEW CODE**. The code written on a programming language is just an artefact of the specs compilation. Similar as binaries are artefacts of the code compilation.
 
@@ -26,6 +26,8 @@ graph TD
     S6["Step 6: Implementation"] --> 
     S7["Step 7: Phase Completion & Integration"]
 ```
+
+More detailed workflow description in the [sdd-workflow.md](sdd-workflow.md) file.
 
 ## 🚀 Getting Started
 
