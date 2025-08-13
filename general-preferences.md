@@ -13,10 +13,10 @@ All the project documentation is in the docs/ directory, number prefix of the do
 - System Architecture: `docs/2_system_architecture.md`
 - Feature Roadmap: `docs/3_feature_roadmap.md`
 - Functional Design documents: `docs/5.1_functional_design.md`
-- Technical Design documents (TDD): 
+- Technical Design documents (TDDoc): 
     - `docs/5.3_technical_design.md`
-    - `docs/5.3_technical_design_data_models_schemas.md` (Section 3 of TDD)
-    - `docs/5.3_technical_design_api_endpoints.md` (Section 4 of TDD)
+    - `docs/5.3_technical_design_data_models_schemas.md` (Section 3 of TDDoc)
+    - `docs/5.3_technical_design_api_endpoints.md` (Section 4 of TDDoc)
 
 - Deployment Architecture: `docs/4_deployment_architecture.md` (TBD)
 

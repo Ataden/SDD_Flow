@@ -21,7 +21,7 @@ Run only integration tests:
 `cd frontend && npm test` for frontend integration tests
 
 3. For end-to-end tests (playwright):
-`cd frontend && npx playwright test` for frontend end-to-end tests
+Use Playwright MCP to run end-to-end tests
 
 </TESTING_COMMANDS>
 
@@ -31,9 +31,9 @@ Name all tests and files according to the following rules:
 **Unit tests:**
 In tests/unit folder.
 Start names with prefix "UT-".
-Add the id and the name of the component being tested (according to the TDD in 'docs/5.3_tech_design.md') and then testId - a unique number of the test for this service (replace dot with underscore for file names!!!). When adding a new test, always check for existing tests and increment <testID> to ensure it is unique. Then add the name of the test.
+Add the id and the name of the component being tested (according to the TDDoc in 'docs/5.3_tech_design.md') and then testId - a unique number of the test for this service (replace dot with underscore for file names!!!). When adding a new test, always check for existing tests and increment <testID> to ensure it is unique. Then add the name of the test.
 
-When you create a test for an internal component not listed in the TDD (e.g. a React hook or a python class), add its name to the test name and the file name.
+When you create a test for an internal component not listed in the TDDoc (e.g. a React hook or a python class), add its name to the test name and the file name.
 Example: 
 - `UT_B1.CallService_01 Create call with valid data` - unit test for creating call with valid data. Must be placed in `tests/unit/UT_B1_CallService.py` file (note the dot between the test name and the test ID is replaced with underscore for file names!!!) among other unit tests of the Call Service.
 - `UT_F1.7_CalendarView_useCalendar_01 Calendar hook initialization with authentication` - unit test for calendar hook initialization with authentication. Must be placed in `tests/unit/UT_F1_7_CalendarView_useCalendar.tsx` file (note the dot between the test name and the test ID is replaced with underscore for file names!!!) among other unit tests of the useCalendar hook.
@@ -43,7 +43,7 @@ Group all unit tests of the same component in one file file.
 **API and integration tests:**
 In tests/integration folder.
 Start names with prefix "API-" or "INT-".
-Add the id and name of the initiatinng component and the interaction ID being tested (according to the TDD in 'docs/5.3_tech_design.md')
+Add the id and name of the initiatinng component and the interaction ID being tested (according to the TDDoc in 'docs/5.3_tech_design.md')
 
 Example: 
 - `API_F1.AuthLoginForm_I1 Submit login form with valid data` - API integration test for submitting login form with valid data - interaction `I1`,  Must be placed in `tests/integration/API_F1_AuthLoginForm_I1.py` file (note the replacement of the dot with underscore for file name!!!) - one file per interaction being tested.
@@ -54,7 +54,7 @@ Group all integration tests of the same interaction in one file.
 **End-to-end tests:**
 In tests/e2e folder.
 Start names with prefix "E2E-".
-Add the id of the initiatinng frontend component (according to the TDD in 'docs/5.3_tech_design.md')
+Add the id of the initiatinng frontend component (according to the TDDoc in 'docs/5.3_tech_design.md')
 Create e2e tests ONLY if a frontend component is affected, otherwise skip e2e tests.
 
 Example: 
@@ -81,6 +81,21 @@ For integration tests:
 The goal is to verify actual integration between FastAPI, the ORM, and the database schema using real queries.
 </DATABASE_IN_INTEGRATION_TESTS>
 
-<RUNNING_SERVICES>
-@docs/common/running_services.md
-</RUNNING_SERVICES>
+<E2E_TEST_AUTHENTICATION>
+For E2E tests authentication for the interface behind the login page is performed using the following test credentials:
+
+Email: test@example.com
+Password: password123
+
+</E2E_TEST_AUTHENTICATION>
+
+<BACKEND_LOGS>
+Backend logs are available by http://localhost:8000/logs/?n=10 (last 10 lines, adjust if needed)
+ALWAYS check the logs for any errors or warnings during the tests
+</BACKEND_LOGS>
+
+<E2E_PLAYWRIGHT>
+When you fill in the forms, always do it in one command `await page.fill()`, for all fields in the form not one command for each field
+
+I REPEAT: Use Playwright MCP to run end-to-end tests. IT IS CRUCIAL!!!
+</E2E_PLAYWRIGHT>

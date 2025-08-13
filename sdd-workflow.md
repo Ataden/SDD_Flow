@@ -57,7 +57,7 @@ graph TD
         B1 --> B2
       end
       S5.2["Step 5.2: Optional<br/>Visual Design"]
-      S5.3["Step 5.3: Technical Design Document (TDD)"]
+      S5.3["Step 5.3: Technical Design Document (TDDoc)"]
       
       S5.2 --> S5.3
       DP1 -->|"Option A:<br/>No Prototyping"| S5.2
@@ -337,15 +337,15 @@ Proceed to Step 5.2: Visual Design
 - **Identify key libraries** or dependencies.
 - **Outline the implementation strategy** and potential challenges.
 
-**Deliverable: Technical Design Document (TDD)**
+**Deliverable: Technical Design Document (TDDoc)**
 *A single, comprehensive document detailing the technical implementation plan. It should be a living document, updated as needed during development. It contains code snippets only if strictly necessary.*
 
   - template: [templates/5.3_technical_design.md](templates/5.3_technical_design.md)
   - prompt: [prompts/5.3_technical_design.md](prompts/5.3_technical_design.md)
 
 *Notes:*
-- complex TDD must be run through the additional review (self-reflection and spec lints) with  AI  to ensure it is correct and complete. Prompt: [prompts/5.3_technical_design_review.md](prompts/5.3_technical_design_review.md)
-- after each modification of the TDD, running a spec linter is required to ensure the TDD internal consistency and with codebase - prompt: [prompts/5.3_technical_design_lint.md](prompts/5.3_technical_design_lint.md). 
+- complex TDDoc must be run through the additional review (self-reflection and spec lints) with  AI  to ensure it is correct and complete. Prompt: [prompts/5.3_technical_design_review.md](prompts/5.3_technical_design_review.md)
+- after each modification of the TDDoc, running a spec linter is required to ensure the TDDoc internal consistency and with codebase - prompt: [prompts/5.3_technical_design_lint.md](prompts/5.3_technical_design_lint.md). 
 
 ## Step 6: Implementation
 ### Step 6.1: Implementation Planning
@@ -396,7 +396,11 @@ Proceed to Step 5.2: Visual Design
 **Deliverables:**
 - **Testing Report:** 
   - template: [prompts/6.3_testing_report.md](prompts/6.3_testing_report.md)
-- **Updated Project Documentation:** TDD, FDD, UI Design
+- **Bug List (optional):** List of bugs found during the testing.
+  - template: [prompts/6.3_bug_list.md](prompts/6.3_bug_list.md)
+- **Updates List (optional):** List of updates made during the testing (not bugs but small changes to the ui, etc)
+  - template: [prompts/6.3_updates_list.md](prompts/6.3_updates_list.md)
+- **Updated Project Documentation:** TDDoc, FDD, UI Design
   
 *Notes:*
 - **small bugs** are fixed during the testing, 
@@ -413,7 +417,7 @@ Proceed to Step 5.2: Visual Design
 - **Updated Project Documentation** if needed:
   - system architecture
   - roadmap
-  - design documents (FDD, TDD, UI Design)
+  - design documents (FDD, TDDoc, UI Design)
 - **User Documentation**: tutorials, guides, screencasts, etc.
 - **Phase Acceptance Report (optional)**
   - *Content: All acceptance criteria met, stakeholder sign-off*
